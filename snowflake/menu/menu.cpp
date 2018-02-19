@@ -1,0 +1,1 @@
+bool menu_blocked = false;
