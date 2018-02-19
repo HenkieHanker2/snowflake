@@ -5,7 +5,7 @@ bool __stdcall create_move( float frame_time, c_usercmd* cmd ) {
 	using original_fn = bool( __thiscall* )( void*, float, c_usercmd* );
 	hooks::get( ).client_mode_hook.original<original_fn>( 24 )( interfaces::get( ).client_mode, frame_time, cmd );
 
-	player_t* local = ( player_t* ) interfaces::get( ).entity_list->get_entity( 1 );
+	player_t* local = ( player_t* ) interfaces::get( ).entity_list->get_entity( interfaces::get( ).engine->get_local_player( ) );
 	if ( local ) {
 		if ( !( local->flags( ) & entity_flags::fl_onground ) && cmd->buttons & button_flags::in_jump && options [ "var.bunnyhop" ].get<bool>( ) ) {
 			cmd->buttons &= ~button_flags::in_jump;
