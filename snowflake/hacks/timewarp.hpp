@@ -16,7 +16,7 @@ public:
 		if ( local->health( ) <= 0 )
 			return;
 
-		for ( int i = 0; i < 64; i++ ) {
+		for ( int i = 0; i <= interfaces::get().globals->max_clients; i++ ) {
 			auto entity = ( player_t* ) interfaces::get().entity_list->get_entity( i );
 
 			if ( !entity )
