@@ -17,6 +17,6 @@ public:
 	}
 	studio_hdr_t* get_studio_model( const model_t* model ) {
 		using original_fn = studio_hdr_t * ( __thiscall* )( iv_model_info*, const model_t* );
-		return utilities::get( ).get_vfunc<original_fn>( this, 30 )( this, model );
+		return utilities::get( ).get_vfunc<original_fn>( this, 32 )( this, model );
 	}
 };
